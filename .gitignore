@@ -78,10 +78,7 @@ storybook-static
 .nuxt-storybook
 
 # Custom packages
-packages/be/cache
-packages/be/public
-packages/be/tmp
-packages/fe/static/datasets
+packages/*/dist
 
 # Other tooling
 .serverless
