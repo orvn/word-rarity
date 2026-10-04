@@ -1,0 +1,60 @@
+:root {
+   /* -------------------------------------------------------------------------
+     Colors
+  -------------------------------------------------------------------------- */
+   --woodsmoke: #0d0e12;
+   --tuna: #323340;
+
+   --bone: #e2d8ca;
+   --sandstone: #7a7268;
+   --merlin: #3e3c38;
+
+   --tan: #c9a97a;
+   --buff: #dab98a;
+   --tobacco: #7a6548;
+
+   --cinnabar: #d96060;
+
+   /* -------------------------------------------------------------------------
+     Typography
+  -------------------------------------------------------------------------- */
+
+   /* Sample fonts */
+   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+   --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo,
+      Consolas, 'DejaVu Sans Mono', monospace;
+
+   /* Type scale, stepped down at the large breakpoint in global.scss */
+   --text-xs: 0.875rem;
+   --text-sm: 1rem;
+   --text-base: 1.125rem;
+   --text-lg: 1.25rem;
+   --text-xl: 1.5rem;
+   --text-2xl: 2rem;
+   --text-3xl: 2.5rem;
+   --text-4xl: 3.5rem;
+
+
+   /* -------------------------------------------------------------------------
+     Layout
+  -------------------------------------------------------------------------- */
+   --container-width: 75rem;
+   --container-padding: 2rem;
+   --header-height: 4rem;
+
+
+   /* -------------------------------------------------------------------------
+     Shadows
+  -------------------------------------------------------------------------- */
+   --shadow-sm: 0 0.0625rem 0.1875rem 0 rgb(0 0 0 / 0.4);
+   --shadow-md: 0 0.25rem 0.5rem -0.0625rem rgb(0 0 0 / 0.5), 0 0.125rem 0.25rem -0.125rem rgb(0 0 0 / 0.4);
+   --shadow-lg: 0 0.75rem 1.25rem -0.1875rem rgb(0 0 0 / 0.6), 0 0.25rem 0.5rem -0.25rem rgb(0 0 0 / 0.5);
+
+   /* -------------------------------------------------------------------------
+     Z-index
+  -------------------------------------------------------------------------- */
+   --z-above: 10;
+   --z-header: 100;
+   --z-modal: 1000;
+}
