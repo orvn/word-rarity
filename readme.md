@@ -4,20 +4,24 @@
 
 An exploration into the rarity of words in the English language
 
-## Stack
-
-- **Astro 7**: static output, client-side routing via `<ClientRouter />`
-- **Alpine.js**: lightweight interactivity, no build step
-- **Bun**: package manager and script runner
-- **SCSS**: including breakpoint mixins and Foundation-type base styles
-
-
 ## Structure
 
-Bun workspaces monorepo, packages:
-
-- `packages/site` (`@word-rarity/site`): frontend site
+This project is a monorepo (Bun workspaces) with packages:
 - `packages/data` (`@word-rarity/data`): data analysis
+- `packages/db` (`@word-rarity/db`): database
+- `packages/site` (`@word-rarity/site`): frontend site
+
+## Stack
+
+- **DB**: sqlite, used in production
+- **Data**: collection of perl and shell scripts, and plain text (`tsv`) data
+- **Site**
+  - _Astro 7_: static output, client-side routing via `<ClientRouter />`
+  - _Alpine.js_: lightweight interactivity, no build step
+  - _Bun_: package manager and script runner
+  - _SCSS_: including breakpoint mixins and Foundation-type base styles
+
+
 
 ## Quickstart
 

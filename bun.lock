@@ -12,6 +12,13 @@
         "typescript": "6",
       },
     },
+    "packages/db": {
+      "name": "@word-rarity/db",
+      "version": "0.2.0",
+      "devDependencies": {
+        "typescript": "6",
+      },
+    },
     "packages/site": {
       "name": "@word-rarity/site",
       "version": "0.2.0",
@@ -361,6 +368,8 @@
     "@vue/shared": ["@vue/shared@3.5.43", "", {}, "sha512-uksS7YGMR5NZyr4JNq0Rp+QyLns0ueaz20KwzIPW9R0LH1Vnt4E+XUM29PNseEbf1www2gOuhuDi5AKOIXag9Q=="],
 
     "@word-rarity/data": ["@word-rarity/data@workspace:packages/data"],
+
+    "@word-rarity/db": ["@word-rarity/db@workspace:packages/db"],
 
     "@word-rarity/site": ["@word-rarity/site@workspace:packages/site"],
 
