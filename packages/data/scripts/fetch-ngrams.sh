@@ -38,14 +38,14 @@ if [[ "$cached" -lt 24 ]]; then
   echo "warning: only $cached of 24 shards cached, output will be partial"
 fi
 
-out="$out_dir/enable1-eng-1gram.tsv.gz"
+out="$out_dir/1grams.tsv"
 echo "merging $cached shards"
-cat "$cache_dir"/shard-*.tsv | LC_ALL=C sort -t "$(printf '\t')" -k1,1 | perl "$filter" --merge | gzip > "$out.part"
+cat "$cache_dir"/shard-*.tsv | LC_ALL=C sort -t "$(printf '\t')" -k1,1 | perl "$filter" --merge > "$out.part"
 mv "$out.part" "$out"
 
 echo "fetching totalcounts-1"
-curl -fsSL --retry 3 "$base_url/totalcounts-1" | tr '\t' '\n' | tr ',' '\t' | grep -v '^[[:space:]]*$' > "$out_dir/totalcounts-1.tsv"
+curl -fsSL --retry 3 "$base_url/totalcounts-1" | tr '\t' '\n' | tr ',' '\t' | grep -v '^[[:space:]]*$' > "$out_dir/corpus-totals.tsv"
 
-found="$(gzip -dc "$out" | wc -l | tr -d ' ')"
+found="$(wc -l < "$out" | tr -d ' ')"
 total="$(wc -l < "$wordlist" | tr -d ' ')"
 echo "$out: $found of $total enable1 words found, $(du -h "$out" | cut -f1)"

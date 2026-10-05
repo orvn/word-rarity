@@ -4,7 +4,7 @@ Last updated 2026-10-05. All datasets used are open source or public domain.
 
 ### enable1
 
-> This is the primary dataset used
+> **This is the primary dataset used**
 
 ENABLE (Enhanced North American Benchmark LExicon), first version
 
@@ -37,18 +37,20 @@ Google Books Ngram export, `version 3, 20200217`, corpus `eng`, filtered to _ena
 
 - Source: https://storage.googleapis.com/books/ngrams/books/20200217/eng/1-000NN-of-00024.gz (`NN = 00 to 23`) and `totalcounts-1` at the same path, index at https://storage.googleapis.com/books/ngrams/books/datasetsv3.html
 
-- Files: `ngrams/enable1-eng-1gram.tsv.gz`, `ngrams/totalcounts-1.tsv`
+- Files: `ngrams/1grams.tsv`, and `ngrams/chunked1grams/1grams-NN.tsv` (same data chunked by 16MiB)
 
 - Format: Google's own, one line per word: `word TAB year,match_count,volume_count TAB year,match_count,volume_count ...`, years ascending, no header. Sorted by word (C locale)
 
-- `totalcounts-1.tsv`: one row per year, `year TAB match_count TAB page_count TAB volume_count`, 1470 to 2019, no header. Divide a word's match_count by that year's match_count for relative frequency. The Ngram Viewer plots exactly that, defaulting to 1800 to 2019 with smoothing 3
+- `corpus-totals.tsv` (from Google's `totalcounts-1`): one row per year, `year TAB match_count TAB page_count TAB volume_count`, 1470 to 2019, no header. Divide a word's match_count by that year's match_count for relative frequency. The Ngram Viewer plots exactly that, defaulting to 1800 to 2019 with smoothing 3
 
-- Words found: TODO
+- Words found: `166,175` of `172,823` (i.e., `6,648` _enable1_ words fall under the 40-occurrence floor)
 
 - Notes: 
   - Only untagged entries are used (POS-tagged lines like `apple_NOUN` duplicate the untagged total)
   - Case variants (`apple`, `Apple`, `APPLE`) are summed into the lowercase key
   - `volume_count` is also summed across variants and therefore overcounts distinct books 
+  - Pre-1800 counts are sparse and noisy
   - Google drops ngrams with fewer than 40 occurrences across the corpus
     - If a dictionary word is missing it is below that floor
-  - Pre-1800 counts are sparse and noisy
+  - Relative frequencies match the Ngram Viewer with `corpus=en-2019` exactly
+    - The viewer's default `en` corpus is newer and has no public export, so its values differ by roughly 25%

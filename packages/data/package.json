@@ -9,7 +9,8 @@
   "scripts": {
     "check": "tsc --noEmit",
     "update-raw": "bash scripts/update-raw.sh",
-    "fetch-ngrams": "bash scripts/fetch-ngrams.sh"
+    "fetch-ngrams": "bash scripts/fetch-ngrams.sh",
+    "chunk-ngrams": "perl scripts/chunk-ngrams.pl"
   },
   "devDependencies": {
     "typescript": "6"
