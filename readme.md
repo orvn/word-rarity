@@ -2,7 +2,7 @@
 
 # Word Rarity
 
-An analysis into the rarity of words in the English language
+An exploration into the rarity of words in the English language
 
 ## Stack
 

@@ -44,7 +44,7 @@ cat "$cache_dir"/shard-*.tsv | LC_ALL=C sort -t "$(printf '\t')" -k1,1 | perl "$
 mv "$out.part" "$out"
 
 echo "fetching totalcounts-1"
-curl -fsSL --retry 3 "$base_url/totalcounts-1" | tr '\t' '\n' | tr ',' '\t' | sed '/^$/d' > "$out_dir/totalcounts-1.tsv"
+curl -fsSL --retry 3 "$base_url/totalcounts-1" | tr '\t' '\n' | tr ',' '\t' | grep -v '^[[:space:]]*$' > "$out_dir/totalcounts-1.tsv"
 
 found="$(gzip -dc "$out" | wc -l | tr -d ' ')"
 total="$(wc -l < "$wordlist" | tr -d ' ')"
