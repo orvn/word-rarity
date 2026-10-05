@@ -8,7 +8,8 @@
   },
   "scripts": {
     "check": "tsc --noEmit",
-    "update-raw": "bash scripts/update-raw.sh"
+    "update-raw": "bash scripts/update-raw.sh",
+    "fetch-ngrams": "bash scripts/fetch-ngrams.sh"
   },
   "devDependencies": {
     "typescript": "6"
