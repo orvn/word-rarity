@@ -14,10 +14,10 @@ An analysis into the rarity of words in the English language
 
 ## Structure
 
-Bun workspaces monorepo, packages live in `packages/`:
+Bun workspaces monorepo, packages:
 
-- `packages/site` (`@word-rarity/site`): the Astro site
-- `packages/data` (`@word-rarity/data`): shared data, imported by the site via `workspace:*`
+- `packages/site` (`@word-rarity/site`): frontend site
+- `packages/data` (`@word-rarity/data`): data analysis
 
 ## Quickstart
 
